@@ -1,0 +1,346 @@
+/* Подключение шрифта Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Базовые стили */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    color: #333;
+}
+
+/* Карточки задач */
+.task-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.task-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+    /* Заголовок задачи */
+    .task-card h3 {
+        font-size: 22px;
+        font-weight: 700;
+        color: #3b82f6; /* Выделение заголовка синим */
+        text-align: center; /* Центрирование заголовка */
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    /* Описание задачи */
+    .task-card p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #6b7280;
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
+
+    /* Поля задачи */
+    .task-card .task-details {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #374151;
+    }
+
+        .task-card .task-details div {
+            margin-bottom: 8px;
+        }
+
+/* Полоска прогресса */
+.progress-bar {
+    height: 6px;
+    width: 100%;
+    background-color: #60a5fa;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+/* Кнопки в карточке */
+.task-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9;
+}
+
+.task-title {
+    text-align: center; /* Центрирование заголовка по горизонтали */
+    width: 100%; /* Заголовок занимает всю ширину */
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.task-card p {
+    margin: 4px 0;
+    text-align: left; /* Выравнивание остальных полей по левому краю */
+
+}
+
+/* Анимация при наведении */
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Адаптивность карточек задач */
+@media (max-width: 768px) {
+    .task-cards-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Контейнер задач */
+.tasks-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+
+.tasks-left {
+    width: 70%;
+}
+
+.add-task-btn-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.toggle-form-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+    .toggle-form-btn:hover {
+        background-color: #2563eb;
+        transform: scale(1.05);
+    }
+
+/* Правая панель участников */
+.participants-right {
+    width: 28%;
+    padding: 15px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-participant-btn {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+    .add-participant-btn:hover {
+        background-color: #2563eb;
+        transform: scale(1.05);
+    }
+
+/* Форма добавления участника */
+.add-participant-form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Поля формы */
+form input,
+form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #374151;
+}
+
+form button {
+    padding: 12px 20px;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+    form button:hover {
+        background-color: #2563eb;
+        transform: scale(1.05);
+    }
+
+/* Кнопка "Удалить" */
+.delete-btn {
+    background-color: #ef4444; /* Красный */
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+    .delete-btn:hover {
+        background-color: #dc2626; /* Темно-красный при наведении */
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+    }
+
+/* Кнопка "Изменить" */
+.edit-btn {
+    background-color: #3b82f6; /* Синий */
+    color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+    .edit-btn:hover {
+        background-color: #2563eb; /* Темно-синий при наведении */
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+    }
+
+/* Дополнительно: Общее для кнопок */
+.task-card button {
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.task-card .edit-btn,
+.task-card .delete-btn {
+    margin-right: 10px;
+}
+
+/* Форма добавления задачи */
+.add-task-form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px; /* Уменьшенная ширина формы */
+    margin-left: auto;
+    margin-right: auto; /* Центрирование формы на странице */
+}
+
+    /* Поля формы */
+    .add-task-form input,
+    .add-task-form textarea {
+        width: 100%; /* Заполнение доступного пространства */
+        padding: 10px;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #374151;
+        box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    .add-task-form textarea {
+        resize: vertical; /* Возможность изменять размер по вертикали */
+        min-height: 80px; /* Минимальная высота для текста */
+    }
+
+    /* Кнопка добавления задачи */
+    .add-task-form button {
+        padding: 10px 18px;
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        align-self: center; /* Центрирование кнопки */
+    }
+
+        .add-task-form button:hover {
+            background-color: #2563eb;
+            transform: scale(1.05);
+        }
+
+
+.tasks-button-container {
+    position: absolute; /* Позволяет разместить кнопку в фиксированном месте */
+    top: 16px; /* Отступ сверху */
+    left: 16px; /* Отступ слева */
+}
+
+.tasks-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Синий цвет кнопки */
+    color: white; /* Белый текст */
+    text-decoration: none; /* Убирает подчеркивание ссылки */
+    border-radius: 5px; /* Скругленные углы */
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавные эффекты */
+}
+
+    .tasks-button:hover {
+        background-color: #0056b3; /* Более темный синий при наведении */
+        transform: scale(1.05); /* Легкое увеличение при наведении */
+    }
+
+
+

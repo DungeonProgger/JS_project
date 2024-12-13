@@ -1,0 +1,32 @@
+.participant-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование содержимого */
+    padding: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .participant-card:hover {
+        transform: translateY(-4px); /* Легкий подъем карточки при наведении */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .participant-card h4 {
+        text-align: center; /* Заголовок по центру */
+        width: 100%; /* Заголовок занимает всю ширину */
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .participant-card p {
+        text-align: center; /* Текст роли выровнен по центру */
+        font-size: 14px;
+        color: #555;
+        margin: 4px 0;
+    }
